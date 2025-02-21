@@ -43,6 +43,9 @@ const props = defineProps({
         type: Boolean,
         default: false,
     },
+    defaultThumb: {
+        type: String,
+    },
 });
 
 const openDeleteModal = (item) => {
@@ -160,17 +163,46 @@ const itemSelectedAdditional = ref(null);
                     :key="item.id"
                     class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700"
                 >
-                    <td
-                        v-for="column in columns"
-                        :key="column.key"
-                        class="px-6 py-4"
-                        :class="{
-                            'font-medium text-gray-900 whitespace-nowrap dark:text-white':
-                                column.key == 'id',
-                        }"
-                    >
-                        {{ item[column.key] }}
-                    </td>
+                    <template v-for="column in columns" :key="column.key">
+                        <td
+                            v-if="column.thumbnail"
+                            class="px-6 py-4"
+                            :class="{
+                                'font-medium text-gray-900 whitespace-nowrap dark:text-white':
+                                    column.key == 'id',
+                            }"
+                        >
+                            <img
+                                :src="item[column.key] || defaultThumb"
+                                alt=""
+                                class="h-20 max-w-xs"
+                            />
+                        </td>
+                        <td
+                            v-else-if="column.show"
+                            class="px-6 py-4 underline"
+                            :class="{
+                                'font-medium text-gray-900 whitespace-nowrap dark:text-white':
+                                    column.key == 'id',
+                            }"
+                        >
+                            <a
+                                :href="route(routeBase + '.show', item['id'])"
+                                target="_blank"
+                                >{{ item[column.key] }}</a
+                            >
+                        </td>
+                        <td
+                            v-else
+                            class="px-6 py-4"
+                            :class="{
+                                'font-medium text-gray-900 whitespace-nowrap dark:text-white':
+                                    column.key == 'id',
+                            }"
+                        >
+                            {{ item[column.key] }}
+                        </td>
+                    </template>
                     <td class="px-6 py-4 inline-flex">
                         <slot :item="item" />
                         <Link

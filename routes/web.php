@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\IsAdmin;
@@ -34,6 +35,7 @@ Route::middleware(IsAdmin::class)->name('admin.')->prefix('admin')->group(functi
 
     Route::resource('admins', AdminController::class);
     Route::resource('users', UserController::class);
+    Route::resource('events', EventController::class);
 });
 
 require __DIR__ . '/auth.php';
