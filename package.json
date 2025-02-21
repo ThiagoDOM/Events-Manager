@@ -17,5 +17,19 @@
         "tailwindcss": "^3.2.1",
         "vite": "^6.0.11",
         "vue": "^3.4.0"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^6.5.1",
+        "@fortawesome/free-brands-svg-icons": "^6.5.1",
+        "@fortawesome/free-solid-svg-icons": "^6.5.1",
+        "@fortawesome/vue-fontawesome": "^3.0.5",
+        "date-fns": "^4.1.0",
+        "flowbite": "^2.3.0",
+        "maska": "^2.1.11",
+        "moment": "^2.30.1",
+        "v-money3": "^3.24.1",
+        "vue-3-mask": "^0.0.1-alpha",
+        "vue-multiselect": "^3.0.0",
+        "vue-toast-notification": "^3.1.2"
     }
 }

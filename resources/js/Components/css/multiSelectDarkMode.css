@@ -1,0 +1,60 @@
+.multiselect__input {
+    line-height: 24px !important;
+    font-size: 16px !important;
+    font-family: Figtree, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --tw-ring-color: #ffffff !important;
+}
+.multiselect__input::placeholder {
+    line-height: 24px !important;
+    font-size: 16px !important;
+    font-family: Figtree, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.multiselect__tags {
+    height: 41.6px;
+    margin-top: 4px;
+}
+
+@media (prefers-color-scheme: dark) {
+
+    .multiselect__option--selected {
+        background: #33405e;
+    }
+
+    .multiselect__tags {
+        border: 1px solid #384151;
+        background: #121827;
+    }
+
+    .multiselect__option {
+        color: #d1d5db;
+    }
+
+    .multiselect__placeholder {
+        color: #697280;
+    }
+
+    .multiselect__input {
+        background: #121827;
+        border: 0px;
+        color: #d1d5db;
+        --tw-ring-color: #121827 !important;
+    }
+
+    .multiselect__input::placeholder {
+        color: #697280;
+    }
+
+    .multiselect__content-wrapper {
+        border: 1px solid #384151;
+    }
+
+    .multiselect__content {
+        background-color: #121827;
+    }
+
+    .multiselect__single {
+        color: #d1d5db;
+        background-color: #121827;
+    }
+}
